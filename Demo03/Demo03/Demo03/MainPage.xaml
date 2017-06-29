@@ -3,4 +3,28 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Demo03"
              x:Class="Demo03.MainPage" Title="Settings">
+    
+    <TableView Intent="Settings">
+        <TableRoot>
+            <TableSection>
+                <SwitchCell Text="Airplane Mode" On="True" />
+                <SwitchCell Text="Notifications" />
+            </TableSection>
+            <TableSection>
+                <EntryCell Label="Login" Placeholder="username"/>
+                <EntryCell Label="Password" Placeholder="password" />
+            </TableSection>
+            <TableSection Title="Silent">
+                <SwitchCell Text="Vibrate"/>
+                <ViewCell>
+                    <Slider Value="5" Minimum="0" Maximum="10"/>
+                </ViewCell>
+            </TableSection>
+            <TableSection Title="Ring">
+                <SwitchCell Text="New Voice Mail" On="True"/>
+                <SwitchCell Text="New Call" On="True"/>
+            </TableSection>
+        </TableRoot>
+    </TableView>
+    
 </ContentPage>

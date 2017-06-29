@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Demo01"
+             x:Class="Demo01.MainPage">
+    <Page.BindingContext>
+        <local:MainPageViewModel></local:MainPageViewModel>
+    </Page.BindingContext>
+    <Page.Resources>
+        <ResourceDictionary>
+            <local:Object2JsonConverter x:Key="JsonConverter"></local:Object2JsonConverter>
+        </ResourceDictionary>
+    </Page.Resources>
+    <StackLayout Padding="10">
+        <Label FontSize="Medium" Text="Filter"></Label>
+        <Label FontSize="Small" Text="Order Type"></Label>
+        <Picker Title="Select an order type" ItemsSource="{Binding OrderTypes}" SelectedItem="{Binding Filter.OrderType}" ItemDisplayBinding="{Binding .}"></Picker>
+        <Label FontSize="Small" Text="From"></Label>
+        <DatePicker Date="{Binding Filter.From}" MaximumDate="{Binding Filter.To}"></DatePicker>
+        <Label FontSize="Small" Text="To"></Label>
+        <DatePicker Date="{Binding Filter.To}" MinimumDate="{Binding Filter.From}"></DatePicker>
+        <Button Image="Filter.png" TextColor="White" BackgroundColor="#006CB8" Margin="0,15"
+            Text="Filter" Command="{Binding Search}"></Button>
+        <Label Text="{Binding Filter,Converter={StaticResource JsonConverter}}"></Label>
+    </StackLayout>
+</ContentPage>

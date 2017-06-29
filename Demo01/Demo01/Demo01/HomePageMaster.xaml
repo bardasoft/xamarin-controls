@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Demo01.HomePageMaster"
+             Title="Master" Icon="Menu.png">
+    <ListView x:Name="MenuItemsListView"
+              SeparatorVisibility="None"
+              HasUnevenRows="true" BackgroundColor="White"
+              ItemsSource="{Binding MenuItems}">
+        <ListView.Header>
+            <Grid BackgroundColor="#6D27C8" Padding="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Image Source="XamPeru.png" Grid.Row="1" HorizontalOptions="Start"/>
+                <Label Grid.Row="2" Text="DemoControls" FontSize="Medium" HorizontalOptions="Start" TextColor="White" FontAttributes="Bold"/>
+                <Label Grid.Row="3" Text="Demo01" FontSize="Small" HorizontalOptions="Start" TextColor="White"/>
+            </Grid>
+        </ListView.Header>
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <StackLayout Padding="10,15" Spacing="10" Orientation="Horizontal">
+                        <Image Source="{Binding IconUrl}" VerticalOptions="Center"/>
+                        <Label Text="{Binding Title}" VerticalOptions="Center"/>
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>

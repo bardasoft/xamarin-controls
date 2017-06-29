@@ -16,12 +16,25 @@ namespace Demo04
             InitializeComponent();
         }
 
-        //private double GetProgress()
-        //{
-        //    var progress = Progress.Progress;
-        //    progress += 0.2;
-        //    if (progress > 1) progress = 0;
-        //    return progress;
-        //}
+        private async void BtnDownload_OnClicked(object sender, EventArgs e)
+        {
+            var progress = GetProgress();
+
+            await Progress.ProgressTo(progress, 500, Easing.CubicIn);
+        }
+
+        private void BtnDownload02_OnClicked(object sender, EventArgs e)
+        {
+            var p = GetProgress();
+            Progress.Progress = p;
+        }
+
+        private double GetProgress()
+        {
+            var progress = Progress.Progress;
+            progress += 0.2;
+            if (progress > 1) progress = 0;
+            return progress;
+        }
     }
 }

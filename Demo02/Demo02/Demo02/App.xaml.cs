@@ -7,6 +7,7 @@ namespace Demo02
         public App()
         {
             InitializeComponent();
+            MainPage = new TabsPage();
         }
 
         protected override void OnStart()

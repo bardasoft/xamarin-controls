@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:demo02="clr-namespace:Demo02;assembly=Demo02"
+             x:Class="Demo02.TabsPage">
+    <demo02:HomePage Title="National">
+        <x:Arguments>
+            <x:String>https://medium.com/@abcnews/latest</x:String>
+        </x:Arguments>
+        <Page.Icon>
+            <OnPlatform x:TypeArguments="FileImageSource">
+                <On Platform="iOS" Value="Local.png" />
+            </OnPlatform>
+        </Page.Icon>
+    </demo02:HomePage>
+    <demo02:HomePage Title="Global">
+        <x:Arguments>
+            <x:String>https://medium.com/@abcnews/latest</x:String>
+        </x:Arguments>
+        <Page.Icon>
+            <OnPlatform x:TypeArguments="FileImageSource">
+                <On Platform="iOS" Value="Global.png" />
+            </OnPlatform>
+        </Page.Icon>
+    </demo02:HomePage>
+</TabbedPage>

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Demo02.HomePage">
+    <ContentPage.Content>
+        <Grid>
+            <WebView x:Name="WebView" Navigated="WebView_OnNavigated" Navigating="WebView_OnNavigating"></WebView>
+            <StackLayout x:Name="Loader" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="White">
+                <Label HorizontalTextAlignment="Center" Text="We're fetching latest news for you"
+                       FontSize="Medium" VerticalOptions="EndAndExpand"></Label>
+                <ActivityIndicator x:Name="Loading" IsRunning="True" VerticalOptions="StartAndExpand"></ActivityIndicator>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
